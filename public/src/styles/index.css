@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --main-color: blue;
+}
+:root {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, Quicksand, sans-serif, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  --portfolio-HIGHLIGHT_COLOR: rgb(1, 211, 146);
+  --portfolio-TEXT_DARK_COLOR: rgb(129, 141, 172);
+}
+
+

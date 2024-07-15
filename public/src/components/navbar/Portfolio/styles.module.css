@@ -1,0 +1,33 @@
+.navbar {
+  transition: all 1s ease-in-out;
+  z-index: 100;
+}
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--portfolio-HIGHLIGHT_COLOR);
+}
+
+
+.nav_text:hover {
+  cursor: pointer;
+  color: var(--portfolio-HIGHLIGHT_COLOR);
+  transition: ease-in-out 0.3s;
+  transform: scale(1.1);
+}
+.hrline {
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+  animation: rotateInfinite 10s infinite;
+}
+
+@keyframes rotateInfinite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

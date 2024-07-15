@@ -1,0 +1,108 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(14, 22, 48);
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  border-radius: 10px;
+} */
+
+/* Handle */
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(1, 211, 146, 0.2);
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(1, 211, 146, 1);
+  cursor: pointer;
+}
+
+.helloThere {
+  display: inline-flex;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.helloThere::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--portfolio-HIGHLIGHT_COLOR);
+  animation: slideBorder 4s infinite;
+}
+
+@keyframes slideBorder {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  25% {
+    left: 0;
+    width: 100%;
+  }
+  50% {
+    left: 100%;
+    width: 0%;
+  }
+  75% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 0;
+    width: 0%;
+  }
+}
+.typewriter {
+  font-size: 34px;
+  font-family: Quicksand, sans-serif !important;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 10px 4px 0px;
+  color: white;
+  animation: typing 3s steps(12) infinite, step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    content: "I";
+  }
+  14% {
+    content: "I'";
+  }
+  28% {
+    content: "I'm";
+  }
+  42% {
+    content: "I'm R";
+  }
+  56% {
+    content: "I'm Ri";
+  }
+  70% {
+    content: "I'm Rit";
+  }
+  84% {
+    content: "I'm Riti";
+  }
+  100% {
+    content: "I'm Ritik";
+  }
+}
+
+.typewriter::before {
+  content: "I'm Ritik";
+  animation: typing 3s steps(13) infinite;
+}
+
+.p_description {
+  color: var(--portfolio-TEXT_DARK_COLOR);
+  font-size: smaller;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
