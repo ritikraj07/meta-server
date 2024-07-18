@@ -1,6 +1,7 @@
 .navbar {
   transition: all 1s ease-in-out;
   z-index: 100;
+  background-color: var(--portfolio-BACKGROUND_COLOR);
 }
 
 .scrolled {
@@ -8,6 +9,9 @@
   top: 0;
   left: 0;
   border-bottom: 1px solid var(--portfolio-HIGHLIGHT_COLOR);
+  background-color: rgba(14,22,48,.8);
+  backdrop-filter: blur(10px);
+
 }
 
 

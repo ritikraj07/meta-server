@@ -7,9 +7,10 @@ import { Box, Typography } from "@mui/material";
 import Icons from "../../icons/Icons";
 
 import { useEffect, useState } from "react";
-import { P_HIGHLIGHT_COLOR, P_PRIMARY_BG } from "../../../constants/Portfolio";
+import { P_HIGHLIGHT_COLOR } from "../../../constants/Portfolio";
 import Menu_Drawer from "../../drawer/Portfolio/Menu_Drawer";
 import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -39,6 +40,12 @@ function Navbar() {
     },
     { Icon: XIcon, onClick: () => HandleClick("github") },
   ];
+  const MyTabs = [
+    { name: "Home", link: "/" },
+    { name: "Blog", link: "/blogs" },
+    { name: "Products", link: "/products" },
+    {name:"Services",link:"#services"}
+  ]
 
 
 
@@ -69,9 +76,9 @@ function Navbar() {
         width: "100%",
         paddingY: "1rem",
         paddingX: scrolled
-          ? { xs: "1rem", sm: "3rem", md: "5rem", lg: "8rem" }
+          ? { xs: "1rem", sm: "3rem", md: "5rem", lg: "5rem" }
           : {},
-        background: P_PRIMARY_BG,
+        // background: P_PRIMARY_BG,
       }}
       className={
         !scrolled ? styles.navbar : styles.navbar + " " + styles.scrolled
@@ -117,11 +124,11 @@ function Navbar() {
         }}
         className={" text-slate-300 text-sm  "}
       >
-        <Typography className={styles.nav_text}> Home</Typography>
-        <Typography className={styles.nav_text}> Blog</Typography>
-        <Typography className={styles.nav_text}> Services</Typography>
-        <Typography className={styles.nav_text}> Product</Typography>
+        {MyTabs.map((item, index) => ( <Typography key={index} className={styles.nav_text}>
+          <Link to={item.link} >{item.name}</Link>
+        </Typography>))}
 
+       
         <Box
           sx={{
             width: "1.5px",

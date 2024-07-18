@@ -8,6 +8,7 @@ import {
 import styles from "./styles.module.css";
 import { Helmet } from "react-helmet-async";
 import TechStack from "../components/lib/Portfolio/TechStack";
+import Project from "../components/lib/Portfolio/Project";
 
 function Portfolio() {
   const connectWithMe = () => {
@@ -65,28 +66,26 @@ function Portfolio() {
       </Helmet>
 
       <Box
-        
         sx={{
           background: P_PRIMARY_BG,
           minHeight: "100vh",
           width: "100%",
-          px: { xs: "1rem", sm: "3rem", md: "5rem", lg: "8rem" },
+          px: { xs: "1rem", sm: "3rem", md: "5rem", lg: "5rem" },
         }}
       >
         <Navbar />
-        <div className="scrollbar"></div>
+
         <Box
           sx={{
             width: "100%",
-            minHeight: "100vh",
+            minHeight: "85vh",
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             alignItems: "center",
-            flexDirection: { xs: "column", sm: "row", md: "row" },
-            py: "5rem",
+            flexDirection: { xs: "column-reverse", sm: "row", md: "row" },
           }}
         >
-          <Box className="" sx={{ width: "50%" }}>
+          <Box sx={{ width: { xs: "100%", sm: "50%", md: "50%" } }}>
             <Typography
               sx={{
                 color: P_HIGHLIGHT_COLOR,
@@ -132,23 +131,33 @@ function Portfolio() {
               Connet with me
             </Button>
           </Box>
-          <Box sx={{ width: "50%", background: "gray", height: "100%" }}>a</Box>
+          <Box
+            sx={{
+              display: { xs: "block", sm: "flex", md: "flex" },
+              justifyContent: "end",
+              width: { xs: "60%", sm: "45%", md: "35%" },
+              borderRadius: { xs: "10%", sm: "30%", md: "100%" },
+              overflow: "hidden",
+              // mt: { xs: "10rem", sm: "0", md: "0" },
+            }}
+          >
+            <img
+              style={{}}
+              src="https://avatars.githubusercontent.com/u/117502397?v=4"
+              alt="ritik raj"
+            />
+          </Box>
         </Box>
 
         {/* Tech Stack */}
+
         <TechStack />
 
         {/* Projects */}
 
-        <Box sx={{height:"100vh"}} >
-
-        </Box>
-
-
+        <Project />
+        <Box sx={{ height: "100vh" }} id="#services"></Box>
       </Box>
-
-
-
     </>
   );
 }
