@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import Navbar from "../components/navbar/Portfolio/Navbar";
+
 import {
   P_HIGHLIGHT_COLOR,
   P_PRIMARY_BG,
@@ -9,6 +10,9 @@ import styles from "./styles.module.css";
 import { Helmet } from "react-helmet-async";
 import TechStack from "../components/lib/Portfolio/TechStack";
 import Project from "../components/lib/Portfolio/Project";
+import Services from "../components/lib/Portfolio/Services";
+import Footer from "../components/footers/Portfolio/Footer";
+import ResumeBtm from "../components/lib/Portfolio/ResumeBtm";
 
 function Portfolio() {
   const connectWithMe = () => {
@@ -116,20 +120,24 @@ function Portfolio() {
                 I share my knowledge and experience with others.
               </p>
             </Box>
-            <Button
-              variant="contained"
-              sx={{
-                mt: "2rem",
-                py: "0.5rem",
-                "&:hover": {
-                  background: P_HIGHLIGHT_COLOR,
-                  color: P_PRIMARY_BG,
-                },
-              }}
-              onClick={connectWithMe}
-            >
-              Connet with me
-            </Button>
+            <Box sx={{ display: "flex",}} >
+              <Button
+                variant="contained"
+                sx={{
+                  mt: "2rem",
+                  py: "0.5rem",
+                  mr: "1rem",
+                  "&:hover": {
+                    background: P_HIGHLIGHT_COLOR,
+                    color: P_PRIMARY_BG,
+                  },
+                }}
+                onClick={connectWithMe}
+              >
+                Connet with me
+              </Button>
+              <ResumeBtm />
+            </Box>
           </Box>
           <Box
             sx={{
@@ -156,7 +164,11 @@ function Portfolio() {
         {/* Projects */}
 
         <Project />
-        <Box sx={{ height: "100vh" }} id="#services"></Box>
+        {/* Services */}
+
+        <Services />
+
+        <Footer />
       </Box>
     </>
   );

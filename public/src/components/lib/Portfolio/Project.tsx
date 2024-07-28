@@ -20,65 +20,88 @@ function Project() {
             <Box
               sx={{
                 background: "rgb(23,31,56)",
-                padding:{xs:"1rem",sm:".5rem",md:"1rem"},
+                padding: { xs: "1rem", sm: ".5rem", md: "1rem" },
                 minWidth: "100px",
                 borderRadius: "10px",
                 position: "relative",
                 height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
                 "&:hover": {
-                  transform: "scale(1.03)",
+                  transform: "scale(1.02)",
                   zIndex: "1",
-                  transition: "all 0.5s ease-in-out",
-                  cursor: "pointer",
-                  borderRadius: "0px",
-                  // boxShadow: `0px 0px 10px 0px ${P_HIGHLIGHT_COLOR}`,
+                  transition: "all 1s ease-in-out",
+                  boxShadow: `0px 0px 10px 0px ${P_HIGHLIGHT_COLOR}`,
                 },
               }}
             >
               <img
-                style={{ width: "100%", borderRadius: "10px" }}
+                style={{ width: "100%", borderRadius: "10px", }}
                 src={project.image}
                 alt={project.name}
               />
-              <Box sx={{ my: "1rem" }}>
-                <Typography
-                  sx={{ color: "white", fontWeight: "bold", mb: "0.5rem" }}
-                >
-                  {" "}
-                  {project.name}
-                </Typography>
-                <Typography
-                  sx={{ color: P_TEXT_DARK_COLOR, fontSize: "0.8rem" }}
-                >
-                  {project.desc}
-                </Typography>
-              </Box>
-              <Box sx={{ position: "relative" }}>
-                {project.techs.map((tech: string, i: number) => (
-                  <Button
-                    onClick={() =>
-                      window.open(
-                        `https://www.google.com/search?q=${tech}`,
-                        "_blank"
-                      )
-                    }
-                    key={i}
-                    variant="contained"
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  flex: 1,
+                  
+                }}
+              >
+                {/* Project Name */}
+                <Box sx={{ my: "1rem" }}>
+                  <a href={project.link} target="_blank">
+                    <Typography
+                      sx={{ color: "white", fontWeight: "bold", mb: "0.5rem" }}
+                    >
+                      {project.name}
+                    </Typography>
+                  </a>
+                  <Typography
                     sx={{
-                      mr: "0.5rem",
+                      color: P_TEXT_DARK_COLOR,
+                      fontSize: "0.8rem",
                       mb: "0.5rem",
-                      background: P_TEXT_DARK_COLOR,
-                      padding: 0.5,
-                      fontSize: "0.6rem",
-                      "&:hover": {
-                        background: P_HIGHLIGHT_COLOR,
-                      },
                     }}
                   >
-                    {tech}
-                  </Button>
-                ))}
+                    {project.desc}
+                  </Typography>
+                </Box>
+                {/* Descriptions */}
+                <Box sx={{ position: "relative" }}>
+                  {project.techs.map((tech: string, i: number) => (
+                    <Button
+                      onClick={() =>
+                        window.open(
+                          `https://www.google.com/search?q=${tech}`,
+                          "_blank"
+                        )
+                      }
+                      key={i}
+                      variant="contained"
+                      sx={{
+                        mr: "0.5rem",
+                        mb: "0.5rem",
+                        background: P_TEXT_DARK_COLOR,
+                        padding: 0.5,
+                        fontSize: "0.6rem",
+                        "&:hover": {
+                          background: P_HIGHLIGHT_COLOR,
+                        },
+                      }}
+                    >
+                      {tech}
+                    </Button>
+                  ))}
+                </Box>
               </Box>
+
+              {/* features */}
+
+              {/* Icons */}
               <Box
                 sx={{
                   mt: "1rem",

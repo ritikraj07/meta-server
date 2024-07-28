@@ -34,8 +34,6 @@ function TechStack() {
     "C++",
     "C#",
     "Python",
-    "C#",
-    "C++",
     "Java",
     "JavaScript",
     "TypeScript",
@@ -47,15 +45,18 @@ function TechStack() {
         flexDirection: "row",
         gap: "10px",
         flexWrap: "wrap",
+        my: "1rem",
         justifyContent: "center",
         border: "1px solid white",
               padding: "20px",
         borderRadius: "10px",
       }}
+
     >
       {TechStack.map((t) => {
         return (
           <Typography
+            key={t}
             sx={{
               color: "white",
               border: `1px solid ${P_HIGHLIGHT_COLOR}`,

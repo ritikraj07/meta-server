@@ -17,4 +17,14 @@ router.get("/image", (req: Request, res: Response) => {
   });
 });
 
+router.get("/resume",(req: Request, res: Response) => {
+  const filePath = path.join(__dirname, "../../media/Portfolio", "Ritik Raj Fullstack Developer.pdf");
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error("Error sending file:", err);
+      res.status(500).send("Error sending file");
+    }
+  });
+}); 
+
 export default router;

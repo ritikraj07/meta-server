@@ -1,13 +1,15 @@
 import express, { Request, Response } from "express";
 import path from "path";
-import { getDirnameAndFilename } from "./utils/utils.js"
+import { getDirnameAndFilename } from "./utils/utils.js";
 import portfolioRouter from "./routes/Portfolio/index.js";
+import cors from "cors";
 
 const { __dirname } = getDirnameAndFilename(import.meta.url);
 
 const app = express();
 const PORT = 3000;
-
+app.use(cors());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public/dist")));
 
 // Mount the portfolio router
