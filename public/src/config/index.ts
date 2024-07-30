@@ -1,5 +1,7 @@
+
 const stage = import.meta.env.VITE_STAGE;
 let SERVER: string;
+
 
 switch (stage) {
   case "local":
@@ -18,5 +20,6 @@ switch (stage) {
     console.warn("Unknown stage:", stage);
     SERVER = "ritik.online"; // Provide a default value to avoid undefined SERVER
 }
+console.log("SERVER:", SERVER);
 
 export { SERVER };

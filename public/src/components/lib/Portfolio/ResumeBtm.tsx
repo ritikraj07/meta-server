@@ -30,8 +30,8 @@ function ResumeBtm() {
   }
 
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading resume</p>;
+  // if (isLoading) return <p>Loading...</p>;
+  // if (error) return <p>Error loading resume</p>;
 
   return (
     <Button
