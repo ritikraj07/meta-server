@@ -16,7 +16,7 @@ switch (stage) {
     break;
   default:
     console.warn("Unknown stage:", stage);
-    SERVER = ""; // Provide a default value to avoid undefined SERVER
+    SERVER = "ritik.online"; // Provide a default value to avoid undefined SERVER
 }
 
 export { SERVER };
