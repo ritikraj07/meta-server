@@ -48,7 +48,7 @@ function ResumeBtm() {
       onClick={downloadAndOpenResume}
       endIcon={<CloudDownloadIcon />}
     >
-      Resume
+      {error ? "Error" : isLoading ? "Loading..." : "Download Resume"}
     </Button>
   );
 }
