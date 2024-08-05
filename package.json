@@ -9,7 +9,7 @@
     "build:server": "tsc",
     "build": "npm run build:react && npm run build:server",
     "dev": "nodemon ./src/app.ts",
-    "start": "npm run build && node dist/app.js"
+    "start": "node dist/app.js"
   },
   "repository": {
     "type": "git",
