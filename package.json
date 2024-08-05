@@ -7,9 +7,9 @@
  "scripts": {
     "build:react": "cd public && npm run build",
     "build:server": "tsc",
-    "build": "tsc",
+    "build": "npm run build:react && npm run build:server",
     "dev": "nodemon ./src/app.ts",
-    "start": "node dist/app.js"
+    "start": "npm run build && node dist/app.js"
   },
   "repository": {
     "type": "git",
