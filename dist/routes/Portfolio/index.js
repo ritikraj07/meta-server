@@ -3,9 +3,11 @@ import path from "path";
 import { getDirnameAndFilename } from "../../utils/utils.js";
 const { __dirname } = getDirnameAndFilename(import.meta.url);
 const router = express.Router();
+// console.log("dirname", __dirname)
 router.get("/image", (req, res) => {
     const fileName = req.query.image;
-    const filePath = path.join(__dirname, "../../media/Portfolio", fileName);
+    const filePath = path.resolve(__dirname, "../../../src/media/Portfolio", fileName);
+    // console.log("filePath", filePath)
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error("Error sending file:", err);
@@ -14,7 +16,7 @@ router.get("/image", (req, res) => {
     });
 });
 router.get("/resume", (req, res) => {
-    const filePath = path.join(__dirname, "../../media/Portfolio", "Ritik Raj Fullstack Developer.pdf");
+    const filePath = path.resolve(__dirname, "../../../src/media/Portfolio", "Ritik Raj Fullstack Developer.pdf");
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error("Error sending file:", err);

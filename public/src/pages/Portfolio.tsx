@@ -74,7 +74,7 @@ function Portfolio() {
           background: P_PRIMARY_BG,
           minHeight: "100vh",
           width: "100%",
-          px: { xs: "1rem", sm: "3rem", md: "5rem", lg: "5rem" },
+          px: { xs: "1rem", sm: "3rem", md: "5rem", lg: "5rem", xl: "20rem" },
         }}
       >
         <Navbar />

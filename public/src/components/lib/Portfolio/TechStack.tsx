@@ -5,7 +5,6 @@ function TechStack() {
   const TechStack: string[] = [
     "React",
     "Typescript",
-    "Vite",
     "Redux",
     "TailwindCSS",
     "MaterialUI",
@@ -17,18 +16,11 @@ function TechStack() {
     "NodeJS",
     "Express",
     "MongoDB",
-    "Git",
     "GitHub",
-    "Heroku",
-    "Netlify",
-    "Cypress",
-    "Jest",
-    "GitHub Actions",
     "Docker",
     "PostMan",
     "JAVA",
     "Android Studio",
-    "Android SDK",
     "Kotlin",
     "Firebase",
     "C++",
@@ -36,44 +28,55 @@ function TechStack() {
     "Python",
     "Java",
     "JavaScript",
+    "C",
     "TypeScript",
   ];
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        gap: "10px",
-        flexWrap: "wrap",
-        my: "1rem",
-        justifyContent: "center",
-        border: "1px solid white",
-              padding: "20px",
-        borderRadius: "10px",
-      }}
 
-    >
-      {TechStack.map((t) => {
-        return (
-          <Typography
-            key={t}
-            sx={{
-              color: "white",
-              border: `1px solid ${P_HIGHLIGHT_COLOR}`,
-              borderRadius: "5px",
-              padding: "5px 10px",
-              transition: "transform 0.3s ease-in-out",
-              "&:hover": {
-                cursor: "pointer",
-                transform: "scale(1.1)",
-              },
-            }}
-          >
-            {t}
-          </Typography>
-        );
-      })}
-    </Box>
+  const highlightTech = ["React", "NodeJS", "Express", "MongoDB", "TypeScript", "TailwindCSS", "Redux", "React Native", "GitHub", "JavaScript"];
+
+  return (
+    <>
+      <Typography variant="h4" sx={{ color: "white", mb: "1.5rem" }}>
+        Tech Stack
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "10px",
+          flexWrap: "wrap",
+          my: "1rem",
+          justifyContent: "center",
+          border: "1px solid white",
+          padding: "20px",
+          borderRadius: "10px",
+        }}
+      >
+        {TechStack.map((t) => {
+          const isHighlighted = highlightTech.includes(t);
+          return (
+            <Typography
+              key={t}
+              sx={{
+                color: isHighlighted ? P_HIGHLIGHT_COLOR : "white",
+                border: `1px solid ${
+                  isHighlighted ? P_HIGHLIGHT_COLOR : "white"
+                }`,
+                borderRadius: "5px",
+                padding: "5px 10px",
+                transition: "transform 0.3s ease-in-out",
+                "&:hover": {
+                  cursor: "pointer",
+                  transform: "scale(1.1)",
+                },
+              }}
+            >
+              {t}
+            </Typography>
+          );
+        })}
+      </Box>
+    </>
   );
 }
 
