@@ -70,7 +70,7 @@ export const projects = [
     features: [],
     link: "https://ritikraj07.github.io/Project_Spotify.com/",
     github: "https://github.com/ritikraj07/Project_Spotify.com",
-    image: `${SERVER}/portfolio/image?image=Spotify.png`,
+    image: `${SERVER}/portfolio/image?image=spotify.png`,
   },
   {
     name: "Hotstar",
