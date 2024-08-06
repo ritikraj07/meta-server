@@ -5,11 +5,14 @@ import { useState } from "react";
 import { P_HIGHLIGHT_COLOR, P_PRIMARY_BG } from "../../../constants/Portfolio";
 import Icons, { iconProps } from "../../icons/Icons";
 import styles from "../../navbar/Portfolio/styles.module.css";
+import { Link } from "react-router-dom";
 
 interface MenuDrawerProps {
   MyIcons: iconProps[];
+  MyTabs: { name: string; link: string }[];
+
 }
-function Menu_Drawer({ MyIcons }: MenuDrawerProps) {
+function Menu_Drawer({ MyIcons, MyTabs }: MenuDrawerProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -68,10 +71,13 @@ function Menu_Drawer({ MyIcons }: MenuDrawerProps) {
             color: "white",
           }}
         >
-          <Typography className={styles.nav_text}> Home</Typography>
-          <Typography className={styles.nav_text}> Blog</Typography>
-          <Typography className={styles.nav_text}> Services</Typography>
-          <Typography className={styles.nav_text}> Product</Typography>
+          
+
+          {MyTabs.map((item, index) => (
+            <Typography key={index} className={styles.nav_text}>
+              <Link to={item.link}>{item.name}</Link>
+            </Typography>
+          ))}
 
           <Box
             sx={{

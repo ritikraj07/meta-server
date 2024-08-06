@@ -38,13 +38,19 @@ function Navbar() {
       onClick: () =>
         HandleClick("https://www.instagram.com/coding_beast_ritik/"),
     },
-    { Icon: XIcon, onClick: () => HandleClick("github") },
+    {
+      Icon: XIcon,
+      onClick: () =>
+        HandleClick(
+          "https://x.com/RitikRaj297977?t=hs8Vm8rX-Yo9PQNhL5KosA&s=09"
+        ),
+    },
   ];
   const MyTabs = [
     { name: "Home", link: "/" },
     { name: "Blog", link: "/blogs" },
     { name: "Products", link: "/products" },
-    {name:"Services",link:"#services"}
+    {name:"Services",link:"/services"}
   ]
 
 
@@ -152,7 +158,7 @@ function Navbar() {
         ))}
       </Box>
 
-      <Menu_Drawer MyIcons={MyIcons} />
+      <Menu_Drawer MyTabs={MyTabs} MyIcons={MyIcons} />
     </Box>
   );
 }

@@ -134,7 +134,7 @@ function Portfolio() {
                 }}
                 onClick={connectWithMe}
               >
-                Connet with me
+                Connect with me
               </Button>
               <ResumeBtm />
             </Box>
