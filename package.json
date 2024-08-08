@@ -5,11 +5,9 @@
   "type": "module",
   "main": "./dist/app.js",
   "scripts": {
-    "build:react": "cd public && npm run build",
-    "build:server": "tsc",
-    "build": "npm run build:react && npm run build:server",
+    "build": "tsc",
     "dev": "nodemon ./src/app.ts",
-    "start": "npm run build:server && node dist/app.js"
+    "start": "node dist/app.js"
   },
   "repository": {
     "type": "git",

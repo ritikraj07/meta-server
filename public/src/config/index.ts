@@ -1,6 +1,7 @@
 
 const stage = import.meta.env.VITE_STAGE;
 let SERVER: string;
+const console_message = import.meta.env.VITE_CONSOLE_MESSAGE;
 
 
 switch (stage) {
@@ -20,6 +21,6 @@ switch (stage) {
     console.warn("Unknown stage:", stage);
     SERVER = "ritik.online"; // Provide a default value to avoid undefined SERVER
 }
-console.log("SERVER:", SERVER);
+console.log(console_message);
 
 export { SERVER };
