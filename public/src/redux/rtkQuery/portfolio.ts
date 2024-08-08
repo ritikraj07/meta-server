@@ -11,6 +11,12 @@ const portfolioApi = createApi({
         responseHandler: (response) => response.blob(),
       }),
     }),
+    getImages: builder.query<Blob, void>({
+      query: (  ) => ({
+        url: "/image",
+        responseHandler: (response) => response.blob(),
+      }),
+    })
   }),
 });
 

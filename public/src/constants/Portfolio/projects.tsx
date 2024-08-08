@@ -86,8 +86,8 @@ export const projects = [
     ),
     techs: ["MERN", "Tailwind"],
     features: [],
-    link: "https://ritik.online/",
-    github: "https://github.com/ritikraj07/Portfolio",
+    link: "https://github.com/ritikraj07/Project_Disney-Hotstar.com",
+    github: "https://github.com/ritikraj07/Project_Disney-Hotstar.com",
     image: `${SERVER}/portfolio/image?image=hotstar.png`,
   },
   {

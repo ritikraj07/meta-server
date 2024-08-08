@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, Skeleton } from "@mui/material";
 import { projects } from "../../../constants/Portfolio/projects";
 import LanguageIcon from "@mui/icons-material/Language";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -7,15 +7,19 @@ import {
   P_TEXT_DARK_COLOR,
 } from "../../../constants/Portfolio";
 import Icons from "../../icons/Icons";
+import { useState } from "react";
 
 function Project() {
+  
   return (
     <Box sx={{ mt: "2rem" }}>
       <Typography variant="h4" sx={{ color: "white", mb: "1.5rem" }}>
         Checkout My Projects
       </Typography>
       <Grid container spacing={2}>
-        {projects.map((project, i) => (
+        {projects.map((project, i) => {
+          const [isLoading, setIsLoading] = useState(true);
+          return (
           <Grid item xs={12} sm={6} md={6} lg={4} key={i}>
             <Box
               sx={{
@@ -36,10 +40,19 @@ function Project() {
                 },
               }}
             >
+              {isLoading && (
+                <Skeleton
+                  variant="rectangular"
+                  width="100%"
+                  height={200}
+                  sx={{ borderRadius: "10px" }}
+                />
+              )}
               <img
-                style={{ width: "100%", borderRadius: "10px", }}
+                style={{ width: "100%", borderRadius: "10px" }}
                 src={project.image}
                 alt={project.name}
+                onLoad={() => setIsLoading(false)}
               />
 
               <Box
@@ -48,7 +61,6 @@ function Project() {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   flex: 1,
-                  
                 }}
               >
                 {/* Project Name */}
@@ -134,7 +146,7 @@ function Project() {
               </Box>
             </Box>
           </Grid>
-        ))}
+        )})}
       </Grid>
     </Box>
   );
