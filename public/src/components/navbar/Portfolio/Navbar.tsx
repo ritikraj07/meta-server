@@ -27,7 +27,9 @@ function Navbar() {
     {
       Icon: YouTube,
       onClick: () =>
-        HandleClick("https://www.youtube.com/@UltimateCodingBeast"),
+        HandleClick(
+          "https://www.youtube.com/@Hell-Loop-07"
+        ),
     },
     {
       Icon: LinkedInIcon,
@@ -50,7 +52,8 @@ function Navbar() {
     { name: "Home", link: "/" },
     { name: "Blog", link: "/blogs" },
     { name: "Products", link: "/products" },
-    {name:"Services",link:"/services"}
+    { name: "Services", link: "/services" },
+    {name: "Course", link:"/course"}
   ]
 
 
