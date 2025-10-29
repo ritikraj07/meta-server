@@ -50,11 +50,12 @@ function Navbar() {
   ];
   const MyTabs = [
     { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
     { name: "Blog", link: "/blogs" },
     { name: "Products", link: "/products" },
     { name: "Services", link: "/services" },
-    {name: "Course", link:"/course"}
-  ]
+    { name: "Course", link: "/course" },
+  ];
 
 
 
